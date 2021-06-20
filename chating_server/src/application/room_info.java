@@ -23,5 +23,11 @@ public class room_info {
 	public void setMessage(String message) {
 		message_room.add(message);
 	}
+	public void readMessage(client client) {
+		for(String message : message_room) {
+			client.send(message);
+		}
+		
+	}
 	
 }
