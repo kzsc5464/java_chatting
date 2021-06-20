@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.StringTokenizer;
-import java.util.Vector;
+
 
 
 
@@ -46,12 +46,6 @@ public class client {
 						String Message = str.nextToken();
 						String room_name = str.nextToken();
 						
-						System.out.println(message);
-						System.out.println(type);
-						System.out.println(name);
-						System.out.println(Message);
-						System.out.println(room_name);
-						
 						if(room_name.equals("공용")) {
 							System.out.println("true");
 						}else {
@@ -65,26 +59,24 @@ public class client {
 							}
 						}
 						
-						
-						
 						else if(type.equals("start_room")) {
 							for(room_info room : Main.room_name) {
 								if(room.setRoomName().equals(Message)) {
 									room.setMember(client.this);
+									room.readMessage(client.this);
 								}
 							}
 						}
 						
 						else {
 							if(room_name.equals("공용")) {
-								System.out.println("공용 : 메세지 전달");
 								for(client client : Main.clients) {
 									client.send(message);
 								}
 							}else {
-								System.out.println("ㅅㅂ 설마");
 								for(room_info room : Main.room_name) {
 									if(room.name.equals(room_name)) {
+										room.setMessage(message);
 										for(client client:room.client_room) {
 											client.send(message);
 										}
@@ -92,9 +84,7 @@ public class client {
 								}
 							}
 							
-						}
-						
-						
+						}		
 					}
 				}catch(Exception e) {
 					try {
@@ -113,7 +103,6 @@ public class client {
 	
 	public void send(String message) {
 
-		
 		Runnable thread = new Runnable() {
 
 			@Override
@@ -166,6 +155,7 @@ public class client {
 		};
 		Main.threadPool.submit(thread);
 	}
+	
 	
 
 	
