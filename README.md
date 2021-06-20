@@ -15,13 +15,10 @@ TCP/IP, JAVAFX(GUI), Thread, Socket
 
 
 
-## Basic Source
 
-* This's program basic '동빈나' URL : https://www.youtube.com/watch?v=0gMYlUppe-c  <-- First I studied here for chat_logic.
+## Update
 
-
-
-
+* 2021-06-21 loading message When entering a chatting room 
 
 
 
