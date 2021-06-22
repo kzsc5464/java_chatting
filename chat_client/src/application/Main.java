@@ -80,7 +80,7 @@ public class Main extends Application {
 				
 				if(type.equals("message")) {
 					Platform.runLater(()->{
-						textArea.appendText(message+"\n");
+						textArea.appendText( name + " : " + Message +"\n");
 					});
 				}else if(type.equals("room_name")||type.equals("room_first")) {
 					Platform.runLater(() ->{
