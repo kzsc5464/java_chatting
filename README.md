@@ -19,7 +19,7 @@ TCP/IP, JAVAFX(GUI), Thread, Socket
 ## Update
 
 * 2021-06-21 loading message When entering a chatting room / +add room_info setMessage / readMessage
-
+* 2021-06-22 update protocol message -> message type Message
 
 
 
