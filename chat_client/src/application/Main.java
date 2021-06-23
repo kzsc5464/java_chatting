@@ -25,7 +25,8 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
-	
+//	defualt 값 공용
+	String room_choice_name = "공용";
 	Socket socket;
 	TextArea textArea;
 	ListView<String> room_list;
@@ -47,7 +48,6 @@ public class Main extends Application {
 		};
 		thread.start();
 	}
-	
 	public void stopClient() {
 		try {
 //			socket 닫혀있지 않거나 남아있을경우 socket을 닫습니다.
@@ -59,8 +59,6 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 	}
-	
-	
 	public void receive() {
 		while(true) {
 			try {
@@ -78,7 +76,7 @@ public class Main extends Application {
 				String room_name = str.nextToken();
 				
 				
-				if(type.equals("message")) {
+				if(type.equals("message")&& room_name.equals(room_choice_name)) {
 					Platform.runLater(()->{
 						textArea.appendText( name + " : " + Message +"\n");
 					});
@@ -96,8 +94,7 @@ public class Main extends Application {
 				break;
 			}
 		}
-	}
-	
+	}	
 	public void send(String message) {
 	Thread thread = new Thread() {
 			public void run() {
@@ -128,8 +125,6 @@ public class Main extends Application {
 		};
 		thread.start();
 	}
-	
-
 	@Override
 	public void start(Stage primaryStage) {
 		
@@ -175,6 +170,7 @@ public class Main extends Application {
 				Platform.runLater(()->{
 					textArea.clear();
 					choice_room.setText(room_list.getSelectionModel().getSelectedItem());
+					room_choice_name = choice_room.getText();
 					send("start_room"+"/"+userName.getText()+"/"+room_list.getSelectionModel().getSelectedItem()+"/"+"default");
 				});		
 			}
