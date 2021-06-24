@@ -49,7 +49,14 @@ Socket socket;
 						String Message = str.nextToken();
 						String room_name = str.nextToken();
 ```
-
+* type 
+message,make chatting room ..etc function
+* name
+who is run?
+* Message
+content ex) chatting room name / message content .. etc
+* room_name
+where is? it's mean where to send the message
 
 
 ## Update
