@@ -35,19 +35,17 @@ Socket socket;
 ```
 * protocol Server program
 ```
-            InputStream in = socket.getInputStream();
-						byte[] buffer = new byte[1024];
-						int length = in.read(buffer);
-						while(length == -1)throw new IOException();
-						System.out.println("[메시지 수신 성공]");
-					
-						String message = new String(buffer, 0 , length, "UTF-8");
-						
-						StringTokenizer str = new StringTokenizer(message,"/");
-						String type = str.nextToken();
-						String name = str.nextToken();
-						String Message = str.nextToken();
-						String room_name = str.nextToken();
+InputStream in = socket.getInputStream();
+	byte[] buffer = new byte[1024];
+	int length = in.read(buffer);
+	while(length == -1)throw new IOException();
+	System.out.println("[메시지 수신 성공]");
+	String message = new String(buffer, 0 , length, "UTF-8");					
+	StringTokenizer str = new StringTokenizer(message,"/");
+	String type = str.nextToken();
+	String name = str.nextToken();
+	String Message = str.nextToken();
+	String room_name = str.nextToken();
 ```
 * type 
 message,make chatting room ..etc function
