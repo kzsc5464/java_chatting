@@ -56,13 +56,18 @@ content ex) chatting room name / message content .. etc
 * room_name
 where is? it's mean where to send the message
 
+## Design Change Beta(Test) 
+- It hasn't been applied yet.
+![Chatting_desgin]
+
+
 
 ## Update
 
 * 2021-06-21 loading message When entering a chatting room / +add room_info setMessage / readMessage
 * 2021-06-22 update protocol message -> message type Message
 * 2021-06-23 Independent chat for each room.
-
+* 2021-07-09 Add desgin
 
 
 
