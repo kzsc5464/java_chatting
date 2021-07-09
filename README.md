@@ -58,7 +58,8 @@ where is? it's mean where to send the message
 
 ## Design Change Beta(Test) 
 - It hasn't been applied yet.
-![Chatting_desgin]
+![Chatting_desgin](https://user-images.githubusercontent.com/60764506/125098617-22890c80-e112-11eb-9659-a0cdfa5ded93.PNG)
+
 
 
 
